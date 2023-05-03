@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Formulário</title>
+</head>
+<body>
+<div class="container">
+    <H1>Formulário</H1>
+    <form method="get" action="cadastro.php"  autocomplete="on"> <!--O metodo GET é usado quando o conteudo do forrmulario é ate 3000bytes(letras) e 
+        o metodo Post é quando é acima disse e quando é pra dados sensivel como senha e etc, 
+        o ideal é aprender sobre https para guardar dados como cartão de credito e etc-->
+        <h2>Informações pessoais:</h2>
+        <p> <label for="inome">Nome:</label> 
+            <input type="text" name="nome" id="inome" autocomplete="name"> </p> <!--Autocomplete so funcionam quando lá no form estão on, 
+                ele funciona como uma sujestao de completar o quadrinho.-->
+        
+        <p> <label for="isobrenome">Sobrenome:</label> 
+            <input type="text" name="sobrenome" id="isobrenome" autocomplete="given-name"></p>
+        
+        <fieldset><legend>Sexo:</legend>
+            <input type="radio" name="sex" id="masc" value="homem" checked><!--value serve para passar um valor que pode inclusive ser lido em php, 
+                checked serve para marcar como padrão-->
+            <label for="masc">Masculino </label><br/>
+            <input type="radio" name="sex" id="fem" value="mulher">
+            <label for="fem">Feminino </label><br/>
+        </fieldset>
+        
+        <p> <label for="iidade">Idade:</label> 
+            <input type="number" name="idade" id="iidade"></p>
+
+        
+        <p> <label for="iuser">Usuário:</label> 
+            <input type="text" name="Usuário" id="iuser" required minlength="5" maxlength="15" size="10" 
+            placeholder="Nome do usuário" autocomplete="nickname"></p><!--placeholder deixa escrito uma sugestão na caixa de mensagem,
+            size é sobre o tamanho que será a caixinha e min&maxlenght é sobre o minimo e o maximo de caractere que o usuario precisa digitar.-->
+
+        <p> <label for="isenha">Senha:</label> 
+            <input type="password" name="senha" id="isenha" required minlength="8" size="10" autocomplete="new-password"></p>
+
+
+        <h2>Informações Acadêmicas:</h2>
+        <p> <label for="ihora">Horário Prova:</label> 
+            <input type="time" name="Horario" id="ihora"></p>
+
+        <p> <label for="iDia">Dia Prova:</label> 
+            <input type="date" name="diaprova" id="iDia"></p>
+
+        <p> <label for="idata">Mês/ano Prova:</label> 
+                <input type="month" name="Dataprova" id="idata"></p>
+
+        <p> <label for="imedia">Media:</label> 
+            <input type="number" name="Media" id="imedia" min="0" max="10" 
+            placeholder="0 a 10" step="0.1" required></p> <!--step funciona de quantos em quantos decimos vai pular 
+                e required é pra que seja obrigatório o preenchimento, min e max é até onde pode chegar a contagem-->  
+
+        <h3>Escolha uma cor: </h3>
+        <p><label for="icor">Cor: </label>
+            <input type="color" name="cor" id="icor"></p>
+
+        <p><label for="itam">Tamanho:</label>
+            <select name="tamanho" id="itam">
+                <option value="8pt">8</option>
+                <option value="10pt">10</option>
+                <option value="12pt">12</option>
+                <option value="14pt">14</option>
+                <option value="16pt">16</option>
+            </select><br/></p>
+
+        <h3>Descubra a raiz quadrada de:</h3>
+        <p> <label for="ivalor">Valor:</label> 
+            <input type="number" name="Valor" id="ivalor"></p>
+
+        <p> <input type="submit" value="Enviar"> <input type="reset" value="limpar"> </p><!--botões de enviar e de limpar-->
+    </form>
+</div>  
+</body>
+</html>
